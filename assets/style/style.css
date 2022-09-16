@@ -1,0 +1,26 @@
+/* BASIC STYLES HERE */
+
+
+body{
+ background-position: center;
+background-size: cover
+}
+
+.hero-image{
+  height: 100vh;
+  /* always scale the image to the appropriate size of your screen */
+  ;
+  background-image: url();
+ 
+  /* keeps the image fixed while scrolling , neat effect. */
+  background-attachment: fixed; 
+}
+
+.text-shadow{
+  color: aliceblue;
+  text-shadow: 1px 1px black, 0px 0px 5px salmon;
+  font-weight: bold;
+  letter-spacing: 0.08rem
+  
+  /* Second Color  in text-shadow is the blur */
+}
