@@ -5,7 +5,7 @@ export class Clock {
 
   constructor(data) {
 
-
+this.localtime=data.localtime ||false
   }
 
 
@@ -13,7 +13,7 @@ export class Clock {
   get ClockTemplate() {
     return /*html */ `
     <span>
-              <h1 class="text-shadow"> ${this.Time}</h1>
+              <h1 class="text-shadow "> ${this.Time}</h1>
             </span>
    
     `;

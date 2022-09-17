@@ -10,8 +10,8 @@ function _drawClock() {
 
 export class ClocksController {
   constructor() {
-    this.getTime();
     _drawClock();
+    setInterval(_drawClock.bind(1000))
   }
 
   getTime() {

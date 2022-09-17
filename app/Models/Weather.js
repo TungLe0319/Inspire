@@ -8,42 +8,73 @@ export class Weather {
     this.name = data.name;
     this.wind = data.wind;
     this.clouds = data.clouds;
+    this.toggled = data.toggled || false;
   }
 
   get WeatherDetailsTemplate() {
     return /*html */ `
     
-   <div class=" ">
-<div class="card-body  ">
-<div class="d-flex justify-content-between">
-<p>${this.Celcius}<i class="mdi mdi-temperature-celsius fs-2"></i></p>
+  
+<div class="card-body  position-relative">
+<div class="d-flex justify-content-between selectable pt-2 rounded" 
+>
+<div class="ms-4" onclick="app.weatherDetailsController.toggleTemp()">
+<p class="fs-5 animate__flip animate__animated">
+${this.toggled ? `${this.Celcius}` : `${this.Farenheit}`}
+<i class="mdi ${
+      this.toggled ? `mdi-temperature-celsius` : `mdi-temperature-fahrenheit`
+    } fs-3"></i></p>
+</div>
+<div class="">
+<small>${this.name}</small>
+</div>
+<div class="text-light ">
+
+
+
+<p>
+   <i class="rounded  selectable mdi mdi-dots-vertical fs-1" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample"
+     aria-expanded="false" aria-controls="collapseWidthExample"></i>
+</p>
+
+</div>
+</div>
 
 
 </div>
-<div>
-<p>${this.Farenheit}<i class="mdi mdi-temperature-fahrenheit fs-2"></i></p></div>
-<p>${this.name}</p>
-<p>${this.weather[0].main}</p>
-<p>${this.weather[0].description}</p>
-</div>
 
-   </div>
+  
     `;
   }
 
-  
-get Celcius(){
-  let temp = this.main.temp
-  let celcius = temp -273.15
-  return celcius.toFixed(2)
-}
 
 
-get Farenheit(){
-  let temp = this.main.temp
-  let farenheit=  temp *(9/5)-459.67
-  return farenheit.toFixed(2)
+get extraDetailsTemplate(){
+   return /*html */ `
+   <div class="p-1 rounded  text-shadow">
+    
+      <span>
+        <small>
+        ${this.main.humidity}
+        <i class="mdi mdi-cloud-percent fs-5"></i>
+        </small>
+      </span>
+   </div>
+   `
+
 }
+
+  get Celcius() {
+    let temp = this.main.temp;
+    let celcius = temp - 273.15;
+    return celcius.toFixed(2);
+  }
+
+  get Farenheit() {
+    let temp = this.main.temp;
+    let farenheit = temp * (9 / 5) - 459.67;
+    return farenheit.toFixed(2);
+  }
 }
 
 /**
@@ -55,5 +86,3 @@ temp
 temp_max
 temp_min
  */
-
-

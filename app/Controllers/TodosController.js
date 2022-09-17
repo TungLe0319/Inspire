@@ -34,7 +34,7 @@ const yes = await Pop.confirm('Are You Sure?')
       }
 
       await todosService.deleteTodo(id)
-    
+    Pop.success('Good Job!')
     } catch (error) {
       console.error('[]',error)
       Pop.error(error)

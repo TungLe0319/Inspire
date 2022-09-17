@@ -1,10 +1,38 @@
 /* BASIC STYLES HERE */
 
 
+@import url('https://fonts.googleapis.com/css2?family=Asap:ital,wght@1,500&family=Audiowide&family=Fascinate+Inline&family=Mouse+Memoirs&family=Orbitron:wght@500&family=Poppins:wght@200&family=Roboto:ital,wght@1,300&family=Titan+One&display=swap');
+
+
+
+
+*{
+font-family: 'Roboto', sans-serif;
+
+}
+
 body{
  background-position: center;
 background-size: cover
 }
+
+
+
+input[type="checkbox"]{
+  accent-color: rgb(169, 8, 233);
+  width: 2rem;
+  height: 2rem;
+  margin-top: .35rem;
+}
+
+
+
+
+.opacity-low{
+background-color: rgba(11, 5, 15, 0.623);
+}
+
+
 
 .hero-image{
   height: 100vh;

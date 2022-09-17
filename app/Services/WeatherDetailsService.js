@@ -14,6 +14,14 @@ class WeatherDetailsService{
   appState.weatherDetails = new Weather(res.data)
   console.log('appstate',appState.weatherDetails);
   }
+
+
+  toggleTemp(){
+ let weather = appState.weatherDetails
+ weather.toggled = !weather.toggled
+ appState.emit('weatherDetails')
+ console.log(weather.toggled);
+  }
 }
 
 export const weatherDetailsService = new WeatherDetailsService()
