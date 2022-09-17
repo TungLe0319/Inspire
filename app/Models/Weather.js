@@ -16,26 +16,26 @@ export class Weather {
     
   
 <div class="card-body  position-relative">
-<div class="d-flex justify-content-between selectable pt-2 rounded" 
+<div class="d-flex justify-content-center align-items-center pt-2 rounded" 
 >
-<div class="ms-4" onclick="app.weatherDetailsController.toggleTemp()">
-<p class="fs-5 animate__flip animate__animated">
+<div class="ms-4 " onclick="app.weatherDetailsController.toggleTemp()">
+<p class="fs-5 animate__flip animate__animated selectable p-1 rounded">
 ${this.toggled ? `${this.Celcius}` : `${this.Farenheit}`}
 <i class="mdi ${
       this.toggled ? `mdi-temperature-celsius` : `mdi-temperature-fahrenheit`
     } fs-3"></i></p>
+ 
 </div>
-<div class="">
-<small>${this.name}</small>
-</div>
-<div>
+<div class="d-flex flex-column mx-5">
+<small>   ${this.weather[0].description}</small>
 <img src="https://openweathermap.org/img/wn/${this.weather[0].icon}.png" alt="">
 </div>
-<div class="text-light ">
+
+<div class="text-light " >
 
 
 
-<p>
+<p >
    <i class="rounded  selectable mdi mdi-dots-vertical fs-1" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample"
      aria-expanded="false" aria-controls="collapseWidthExample"></i>
 </p>
@@ -54,47 +54,68 @@ ${this.toggled ? `${this.Celcius}` : `${this.Farenheit}`}
 
 get extraDetailsTemplate(){
    return /*html */ `
-   <div class="p-1 rounded  text-shadow">
+   <div class="p-1 rounded  text-shadow" >
     
+  
+        <div class="p-1 selectable rounded">
+          <small>
+        ${this.toggled ? `${this.Celciusmin} ... ${this.Celciusmax}` : `${this.Farenheitmin} ... ${this.Farenheitmax}`}
+         <i class="mdi ${
+           this.toggled
+             ? `mdi-temperature-celsius`
+             : `mdi-temperature-fahrenheit`
+         } fs-6"></i>
+          </small>
+        </div>
+        <div>
+          <small>
+          <i class="mdi mdi-water "></i>Humidity
+          ${this.main.humidity}%
+          </small>
+        </div>
       <div>
         <small>
-        ${this.main.humidity}
-        <i class="mdi mdi-cloud-percent fs-5"></i>Humidity
-        </small>
-      </div>
-      <div>
-        <small>
-        ${this.main.temp_max}
-        <i class="mdi mdi-sun-thermometer-outline fs-5"></i>High
-        </small>
-      </div>
-      <div>
-        <small>
-        ${this.main.temp_min}
-        <i class="mdi mdi-sun-thermometer-outline fs-5"></i>Low
-        </small>
-      </div>
-      <div>
-        <small>
+        <i class="mdi mdi-weather-dust "></i>Wind Speed
         ${this.wind.speed}
-        <i class="mdi mdi-weather-dust fs-5"></i>Wind Speed
         </small>
       </div>
    </div>
-   `
+   `;
 
 }
 
   get Celcius() {
     let temp = this.main.temp;
     let celcius = temp - 273.15;
-    return celcius.toFixed(2);
+    return celcius.toFixed(1);
   }
 
   get Farenheit() {
     let temp = this.main.temp;
     let farenheit = temp * (9 / 5) - 459.67;
-    return farenheit.toFixed(2);
+    return farenheit.toFixed(1);
+  }
+  get Celciusmax() {
+    let temp = this.main.temp_max;
+    let celcius = temp - 273.15;
+    return celcius.toFixed(1);
+  }
+
+  get Farenheitmax() {
+    let temp = this.main.temp_max;
+    let farenheit = temp * (9 / 5) - 459.67;
+    return farenheit.toFixed(1);
+  }
+  get Celciusmin() {
+    let temp = this.main.temp_min;
+    let celcius = temp - 273.15;
+    return celcius.toFixed(1);
+  }
+
+  get Farenheitmin() {
+    let temp = this.main.temp_min;
+    let farenheit = temp * (9 / 5) - 459.67;
+    return farenheit.toFixed(1);
   }
 }
 

@@ -24,4 +24,15 @@ appState.on('quote',_drawQuote)
         Pop.error(error)
       }
   }
+
+//  async changeQuote(){
+//     try {
+//        await quotesService.
+//       } catch (error) {
+//         console.error('[]',error)
+//         Pop.error(error)
+//       }
+//   }
+
+
 }

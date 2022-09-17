@@ -1,7 +1,7 @@
-import { appState } from "../AppState.js"
-import { Todo } from "../Models/Todo.js"
-import { SandBox } from "./AxiosService.js"
-import { getFormData } from '../Utils/FormHandler.js'
+import { appState } from '../AppState.js';
+import { Todo } from '../Models/Todo.js';
+import { SandBox } from './AxiosService.js';
+import { getFormData } from '../Utils/FormHandler.js';
 class TodosService {
   // @ts-ignore
 
@@ -19,11 +19,12 @@ class TodosService {
 
   async deleteTodo(id) {
     //  let singleTodo= appState.todos.find(t => t.id == id)
+
+    
     await SandBox.delete(`/api/${appState.user}/todos/${id}`);
- appState.todos = appState.todos.filter((t) => t._id != id);
- console.log(appState.todos);
-    appState.emit('todos')
- 
+    appState.todos = appState.todos.filter((t) => t._id != id);
+  
+    appState.emit('todos');
   }
 
   async getTodos() {
@@ -43,12 +44,10 @@ class TodosService {
     appState.emit('todos');
   }
 
-  async getCheckCount() {
-    const res = await SandBox.get(`/api/${appState.user}/todos`);
-   appState.checkedtodos = res.data.filter(t=>t.completed == true).map((t) => new Todo(t));
-   
-    console.log(appState.checkedtodos.length);
+  getCheckCount() {
+    let done = appState.todos.filter((t) => t.completed == false);
+    return done;
   }
 }
 
-export const todosService = new TodosService()
+export const todosService = new TodosService();

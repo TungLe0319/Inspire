@@ -11,18 +11,15 @@ function _drawClock() {
 export class ClocksController {
   constructor() {
     _drawClock();
-    setInterval(_drawClock,1000)
+    setInterval(_drawClock, 1000);
   }
 
   getTime() {
     try {
-      clocksService.getTime();
+      clocksService.get24Hour();
     } catch (error) {
       console.error('[]', error);
       Pop.error(error);
     }
   }
-
-
-
 }

@@ -10,7 +10,7 @@ class WeatherDetailsService{
 
   async getWeatherDetails(){
     const res = await SandBox.get('/api/weather')
-    // console.log(res.data);
+  
   appState.weatherDetails = new Weather(res.data)
   console.log('appstate',appState.weatherDetails);
   }
