@@ -50,16 +50,18 @@ ${this.toggled ? `${this.Celcius}` : `${this.Farenheit}`}
     `;
   }
 
-
-
-get extraDetailsTemplate(){
-   return /*html */ `
+  get extraDetailsTemplate() {
+    return /*html */ `
    <div class="p-1 rounded  text-shadow" >
     
   
         <div class="p-1 selectable rounded">
           <small>
-        ${this.toggled ? `${this.Celciusmin} ... ${this.Celciusmax}` : `${this.Farenheitmin} ... ${this.Farenheitmax}`}
+        ${
+          this.toggled
+            ? `${this.Celciusmin} ... ${this.Celciusmax}`
+            : `${this.Farenheitmin} ... ${this.Farenheitmax}`
+        }
          <i class="mdi ${
            this.toggled
              ? `mdi-temperature-celsius`
@@ -81,8 +83,7 @@ get extraDetailsTemplate(){
       </div>
    </div>
    `;
-
-}
+  }
 
   get Celcius() {
     let temp = this.main.temp;
@@ -118,7 +119,6 @@ get extraDetailsTemplate(){
     return farenheit.toFixed(1);
   }
 }
-
 
 /**
  * -----------this.main----------

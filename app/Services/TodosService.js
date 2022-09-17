@@ -20,10 +20,9 @@ class TodosService {
   async deleteTodo(id) {
     //  let singleTodo= appState.todos.find(t => t.id == id)
 
-    
     await SandBox.delete(`/api/${appState.user}/todos/${id}`);
     appState.todos = appState.todos.filter((t) => t._id != id);
-  
+
     appState.emit('todos');
   }
 

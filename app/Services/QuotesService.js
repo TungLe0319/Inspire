@@ -13,9 +13,6 @@ class QuotesService {
     appState.quote = new Quote(res.data);
     //  console.log('appState',appState.quote);
   }
-
-
-  
 }
 
 export const quotesService = new QuotesService();
