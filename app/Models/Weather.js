@@ -28,6 +28,9 @@ ${this.toggled ? `${this.Celcius}` : `${this.Farenheit}`}
 <div class="">
 <small>${this.name}</small>
 </div>
+<div>
+<img src="https://openweathermap.org/img/wn/${this.weather[0].icon}.png" alt="">
+</div>
 <div class="text-light ">
 
 
@@ -53,12 +56,30 @@ get extraDetailsTemplate(){
    return /*html */ `
    <div class="p-1 rounded  text-shadow">
     
-      <span>
+      <div>
         <small>
         ${this.main.humidity}
-        <i class="mdi mdi-cloud-percent fs-5"></i>
+        <i class="mdi mdi-cloud-percent fs-5"></i>Humidity
         </small>
-      </span>
+      </div>
+      <div>
+        <small>
+        ${this.main.temp_max}
+        <i class="mdi mdi-sun-thermometer-outline fs-5"></i>High
+        </small>
+      </div>
+      <div>
+        <small>
+        ${this.main.temp_min}
+        <i class="mdi mdi-sun-thermometer-outline fs-5"></i>Low
+        </small>
+      </div>
+      <div>
+        <small>
+        ${this.wind.speed}
+        <i class="mdi mdi-weather-dust fs-5"></i>Wind Speed
+        </small>
+      </div>
    </div>
    `
 
@@ -76,6 +97,7 @@ get extraDetailsTemplate(){
     return farenheit.toFixed(2);
   }
 }
+
 
 /**
  * -----------this.main----------

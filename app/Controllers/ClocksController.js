@@ -11,7 +11,7 @@ function _drawClock() {
 export class ClocksController {
   constructor() {
     _drawClock();
-    setInterval(_drawClock.bind(1000))
+    setInterval(_drawClock,1000)
   }
 
   getTime() {

@@ -7,13 +7,15 @@ function _drawTodos() {
   let template = '';
   appState.todos.forEach(p => template += p.TodoTemplate)
   setHTML('todosDOM', template);
-  setText('todo-count', appState.todos.length+ ' left to do')
+  setText('todo-count', appState.todos.length+"/"+appState.checkedtodos.length)
+  
 }
 export class TodosController {
 
 constructor() {
-  this.getTodos()
-  appState.on('todos',_drawTodos)
+// this.getCheckCount()
+ appState.on('todos',_drawTodos)
+ this.getTodos()
 }
 
 async addTodos(){
@@ -28,13 +30,16 @@ async addTodos(){
 // TODO delete it's not refreshing it once done
 async deleteTodo(id){
   try {
-const yes = await Pop.confirm('Are You Sure?')
-      if (!yes) {
-        return
-      }
+// const yes = 
+//       if (!yes) {
+//         return
+//       }
+if (await Pop.confirm('Are You Sure?')) {
+    await todosService.deleteTodo(id)
+}
 
-      await todosService.deleteTodo(id)
-    Pop.success('Good Job!')
+    
+  
     } catch (error) {
       console.error('[]',error)
       Pop.error(error)
@@ -61,5 +66,12 @@ async toggleChecked(id){
     }
 }
 
-
+async getCheckCount(){
+  try {
+      await todosService.getCheckCount()
+    } catch (error) {
+      console.error('[]',error)
+      Pop.error(error)
+    }
+}
 }

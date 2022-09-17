@@ -12,6 +12,7 @@ class AppState extends EventEmitter {
   
   /** @type {import('./Models/Todo').Todo[]} */
   todos= []
+  checkedtodos=[]
   
   
   /** @type {import('./Models/Image').Image | null} */

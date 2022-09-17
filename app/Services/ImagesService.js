@@ -12,7 +12,7 @@ class ImagesService{
 async getImages(){
   const res = await SandBox.get('/api/images',{
     params:{
-      category: 'buddhist'
+      category: 'Tibetan'
     }
   })
   // console.log( 'images',res.data);
