@@ -30,10 +30,10 @@ export class TodosController {
   // TODO delete it's not refreshing it once done
   async deleteTodo(id) {
     try {
-      const yes = await Pop.confirm();
-      if (!yes) {
-        return;
-      }
+    const yes = await Pop.confirm()
+          if (!yes) {
+            return
+          }
 
       await todosService.deleteTodo(id);
     } catch (error) {

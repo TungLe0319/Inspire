@@ -9,16 +9,18 @@ export class Todo {
   get TodoTemplate() {
     return /*html */ `
     
-   <li class="border-0 text-light align-items-center list-group-item justify-content-between d-flex ${
+   <li class="border-0 fw-bold  align-items-center list-group-item justify-content-between d-flex ${
      this.completed
-       ? 'bg-light text-dark fw-bold'
-       : 'bg-transparent text-shadow '
+       ? 'bg-transparent text-light '
+       : ' '
    }">
     <input type="checkbox" name="" class="animate__rubberBand animate__animated" ${
-      this.completed ? 'checked' : ''
+      this.completed ? 'checked ' : ''
     } onchange="app.todosController.toggleChecked('${this._id}')">
     <div class="mx-5 d-flex align-content-center text-wrap">
-        <p class="mt-2 text-break">${this.description}</p>
+        <p class="mt-2 text-break ${
+          this.completed ? 'text-decoration-line-through' : ''
+        }">${this.description}</p>
     </div>
     <i
         class="mdi ${

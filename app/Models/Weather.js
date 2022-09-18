@@ -15,11 +15,11 @@ export class Weather {
     return /*html */ `
     
   
-<div class="card-body  position-relative">
+<div class="card-body  position-relative" style="">
 <div class="d-flex justify-content-center align-items-center pt-2 rounded" 
 >
 <div class="ms-4 " onclick="app.weatherDetailsController.toggleTemp()">
-<p class="fs-5 animate__flip animate__animated selectable p-1 rounded">
+<p class="fs-5 animate__flip animate__animated selectable  p-1 rounded ">
 ${this.toggled ? `${this.Celcius}` : `${this.Farenheit}`}
 <i class="mdi ${
       this.toggled ? `mdi-temperature-celsius` : `mdi-temperature-fahrenheit`
@@ -59,8 +59,8 @@ ${this.toggled ? `${this.Celcius}` : `${this.Farenheit}`}
           <small>
         ${
           this.toggled
-            ? `${this.Celciusmin} ... ${this.Celciusmax}`
-            : `${this.Farenheitmin} ... ${this.Farenheitmax}`
+            ? `${this.Celciusmin}low ... ${this.Celciusmax}high`
+            : `${this.Farenheitmin}low ... ${this.Farenheitmax}high`
         }
          <i class="mdi ${
            this.toggled
@@ -68,14 +68,14 @@ ${this.toggled ? `${this.Celcius}` : `${this.Farenheit}`}
              : `mdi-temperature-fahrenheit`
          } fs-6"></i>
           </small>
-        </div>
-        <div>
+        </div >
+        <div class="p-1 selectable rounded">
           <small>
           <i class="mdi mdi-water "></i>Humidity
           ${this.main.humidity}%
           </small>
         </div>
-      <div>
+      <div class="p-1 selectable rounded">
         <small>
         <i class="mdi mdi-weather-dust "></i>Wind Speed
         ${this.wind.speed}
