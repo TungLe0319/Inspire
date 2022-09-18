@@ -1,18 +1,22 @@
 export class Pop {
-
   /**
    * @typedef {{isAxiosError: boolean, message: string, response:{ data: any}}} AxiosError
    */
 
   /**
-    * @param {string} title The title text.
-    * @param {string} text The body text.
-    * @param {string} confirmButtonText The text of your confirm button.
-    * @param {'success' | 'error' | 'info' | 'warning' | 'question'} icon Pop icon
-    *
-    * {@link https://sweetalert2.github.io/#configuration | Check out Sweet Alerts}
-  */
-  static async confirm(title = 'Are you sure?', text = "You won't be able to revert this!", confirmButtonText = 'Yes', icon = 'warning') {
+   * @param {string} title The title text.
+   * @param {string} text The body text.
+   * @param {string} confirmButtonText The text of your confirm button.
+   * @param {'success' | 'error' | 'info' | 'warning' | 'question'} icon Pop icon
+   *
+   * {@link https://sweetalert2.github.io/#configuration | Check out Sweet Alerts}
+   */
+  static async confirm(
+    title = 'Are you sure?',
+    text = "You won't be able to revert this!",
+    confirmButtonText = 'Yes',
+    icon = 'warning'
+  ) {
     try {
       // @ts-ignore
       const res = await Swal.fire({
@@ -22,15 +26,21 @@ export class Pop {
         confirmButtonText,
         showCancelButton: true,
         reverseButtons: true,
-        confirmButtonColor: 'var(--bs-primary)',
-        cancelButtonColor: 'var(--bs-secondary)',
-      })
+        confirmButtonColor: 'var(--bs-danger)',
+        cancelButtonColor: 'var(--bs-warning)',
+        showClass: {
+          popup: 'animate__animated animate__fadeInDown',
+        },
+        hideClass: {
+          popup: 'animate__animated animate__fadeOutUp',
+        },
+      });
       if (res.isConfirmed) {
-        return true
+        return true;
       }
-      return false
+      return false;
     } catch (error) {
-      return false
+      return false;
     }
   }
 
@@ -44,7 +54,13 @@ export class Pop {
    * {@link https://sweetalert2.github.io/#configuration|Check out Sweet Alerts}
    */
   // @ts-ignore
-  static toast(title = 'Warning!', icon = 'warning', position = 'top-end', timer = 3000, progressBar = true) {
+  static toast(
+    title = 'Warning!',
+    icon = 'warning',
+    position = 'top-end',
+    timer = 3000,
+    progressBar = true
+  ) {
     // @ts-ignore
     Swal.fire({
       title,
@@ -53,8 +69,8 @@ export class Pop {
       timer,
       timerProgressBar: progressBar,
       toast: true,
-      showConfirmButton: false
-    })
+      showConfirmButton: false,
+    });
   }
 
   /**
@@ -62,14 +78,16 @@ export class Pop {
    */
   static error(error) {
     if (error.isAxiosError) {
-      const { response } = error
-      const errorObj = (response.data ? response.data.error : response.data) || { message: 'Invalid Request ' + response.status }
+      const { response } = error;
+      const errorObj = (response.data
+        ? response.data.error
+        : response.data) || { message: 'Invalid Request ' + response.status };
       if (!errorObj) {
-        return this.toast(error.message)
+        return this.toast(error.message);
       }
-      this.toast(errorObj.message || errorObj.error || 'error')
+      this.toast(errorObj.message || errorObj.error || 'error');
     } else {
-      this.toast(error.message || error, 'error')
+      this.toast(error.message || error, 'error');
     }
   }
 
@@ -77,6 +95,57 @@ export class Pop {
    * @param { string } message The message to display. If not provided, will display a generic message.
    */
   static success(message = 'Success!') {
-    this.toast(message, 'success')
+    this.toast(message, 'success');
+  }
+
+  /**
+   * @param {string} title The title text.
+   * @param {string} text The body text.
+   * @param {string} confirmButtonText The text of your confirm button.
+   * @param {'success' | 'error' | 'info' | 'warning' | 'question'} icon Pop icon
+   *
+   * {@link https://sweetalert2.github.io/#configuration | Check out Sweet Alerts}
+   */
+  static async confirmcustom(
+    title = 'Are you sure?',
+    text = "You won't be able to revert this!",
+    confirmButtonText = 'Yes',
+    icon = 'warning'
+  ) {
+    try {
+      // @ts-ignore
+      const res = await Swal.fire({
+        icon: 'warning ',
+        title: 'Are you Sure? ',
+        text: 'You want be able to revert this!',
+        width: 600,
+        confirmButtonText,
+        showCancelButton: true,
+        reverseButtons: true,
+        confirmButtonColor: 'var(--bs-danger)',
+        cancelButtonColor: 'var(--bs-warning)',
+        showClass: {
+          popup: 'animate__animated animate__fadeInDown',
+        },
+        hideClass: {
+          popup: 'animate__animated animate__fadeOutUp',
+        },
+        padding: '3em',
+        color: '#716add',
+        background: '#000000e6 url()',
+        backdrop: `
+    rgba(0,0,123,0.4)
+    url("")
+    center
+    no-repeat
+  `,
+      });
+      if (res.isConfirmed) {
+        return true;
+      }
+      return false;
+    } catch (error) {
+      return false;
+    }
   }
 }
