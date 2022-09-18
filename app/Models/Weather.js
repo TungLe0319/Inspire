@@ -118,7 +118,7 @@ ${this.toggled ? `${this.Celcius}` : `${this.Farenheit}`}
     let farenheit = temp * (9 / 5) - 459.67;
     return farenheit.toFixed(1);
   }
-}
+}77
 
 /**
  * -----------this.main----------

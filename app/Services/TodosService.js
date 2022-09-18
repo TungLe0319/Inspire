@@ -17,7 +17,7 @@ class TodosService {
     // console.log(res.data);
     let newTodo = new Todo(res.data);
     form.reset();
-    appState.todos = [newTodo, ...appState.todos];
+    appState.todos = [ ...appState.todos, newTodo];
   }
 
   async deleteTodo(id) {

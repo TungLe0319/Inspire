@@ -32,8 +32,8 @@ input[type="checkbox"]{
 
 
 .scrolldown{
-  max-height:40vh ;
-  overflow: auto;
+  max-height:45vh ;
+  overflow-y: auto;
 }
 
 .opacity-low{
@@ -64,10 +64,7 @@ background-color: rgba(11, 5, 15, 0.623);
 }
 
 @media screen AND (max-width: 500px) {
-.smallscreen.{
 
-
-}
 
 .extradetails{
   position:static;
