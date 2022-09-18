@@ -14,7 +14,7 @@ export class Todo {
        ? 'bg-transparent text-light '
        : ' '
    }">
-    <input type="checkbox" name="" class="animate__rubberBand animate__animated" ${
+    <input type="checkbox" name="" class="animate__rubberBand animate__animated selectable" ${
       this.completed ? 'checked ' : ''
     } onchange="app.todosController.toggleChecked('${this._id}')">
     <div class="mx-5 d-flex align-content-center text-wrap">

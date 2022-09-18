@@ -18,9 +18,7 @@ body {
 
 input[type='checkbox'] {
   accent-color: rgb(169, 8, 233);
-  width: 1rem;
-  height: 1rem;
-  margin-top: 0.35rem;
+
 }
 
 .scrolldown {
