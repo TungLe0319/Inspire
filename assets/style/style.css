@@ -63,3 +63,15 @@ background-color: rgba(11, 5, 15, 0.623);
   display: none;
 }
 
+@media screen AND (max-width: 500px) {
+.smallscreen.{
+
+
+}
+
+.extradetails{
+  position:static;
+  top: 0px;
+
+}
+}

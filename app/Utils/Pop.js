@@ -106,7 +106,7 @@ export class Pop {
    *
    * {@link https://sweetalert2.github.io/#configuration | Check out Sweet Alerts}
    */
-  static async confirmcustom(
+  static async confirmCustom(
     title = 'Are you sure?',
     text = "You won't be able to revert this!",
     confirmButtonText = 'Yes',

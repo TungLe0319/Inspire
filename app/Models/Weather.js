@@ -15,11 +15,11 @@ export class Weather {
     return /*html */ `
     
   
-<div class="card-body  position-relative" style="">
+<div class="card-body  position-relative" >
 <div class="d-flex justify-content-center align-items-center pt-2 rounded" 
 >
 <div class="ms-4 " onclick="app.weatherDetailsController.toggleTemp()">
-<p class="fs-5 animate__flip animate__animated selectable  p-1 rounded ">
+<p class="fs-5 animate__flip animate__animated selectable  text-center p-1 rounded ">
 ${this.toggled ? `${this.Celcius}` : `${this.Farenheit}`}
 <i class="mdi ${
       this.toggled ? `mdi-temperature-celsius` : `mdi-temperature-fahrenheit`
@@ -28,7 +28,7 @@ ${this.toggled ? `${this.Celcius}` : `${this.Farenheit}`}
 </div>
 <div class="d-flex flex-column mx-5">
 <small>   ${this.weather[0].description}</small>
-<img src="https://openweathermap.org/img/wn/${this.weather[0].icon}.png" alt="">
+<img src="https://openweathermap.org/img/wn/${this.weather[0].icon}.png" alt="weather Icon">
 </div>
 
 <div class="text-light " >
