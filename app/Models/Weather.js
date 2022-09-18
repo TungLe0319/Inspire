@@ -59,8 +59,8 @@ ${this.toggled ? `${this.Celcius}` : `${this.Farenheit}`}
           <small>
         ${
           this.toggled
-            ? `${this.Celciusmin}low ... ${this.Celciusmax}high`
-            : `${this.Farenheitmin}low ... ${this.Farenheitmax}high`
+            ? `${this.Celciusmin} ... ${this.Celciusmax}0`
+            : `${this.Farenheitmin} ... ${this.Farenheitmax}`
         }
          <i class="mdi ${
            this.toggled

@@ -115,7 +115,7 @@ export class Pop {
     try {
       // @ts-ignore
       const res = await Swal.fire({
-        icon: 'warning ',
+        icon: 'warning',
         title: 'Are you Sure? ',
         text: 'You want be able to revert this!',
         width: 600,

@@ -7,14 +7,14 @@ class WeatherDetailsService {
     const res = await SandBox.get('/api/weather');
 
     appState.weatherDetails = new Weather(res.data);
-    console.log('appstate', appState.weatherDetails);
+    // console.log('appstate', appState.weatherDetails);
   }
 
   toggleTemp() {
     let weather = appState.weatherDetails;
     weather.toggled = !weather.toggled;
     appState.emit('weatherDetails');
-    console.log(weather.toggled);
+    // console.log(weather.toggled);
   }
 }
 

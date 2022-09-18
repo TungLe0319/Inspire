@@ -1,3 +1,4 @@
+import { Clock } from "./Models/Clock.js"
 import { Value } from "./Models/Value.js"
 import { EventEmitter } from "./Utils/EventEmitter.js"
 import { isValidProp } from "./Utils/isValidProp.js"
@@ -28,10 +29,8 @@ class AppState extends EventEmitter {
   /** @type {import('./Models/Quote').Quote | null} */
   quote= null
   
-  
-  
-  /** @type {import('./Models/Clock').Clock| null} */
-clock=null
+  /** @type {import('./Models/Clock').Clock} */
+  clock =  new Clock('tung',true)
 }
 
 export const appState = new Proxy(new AppState(), {

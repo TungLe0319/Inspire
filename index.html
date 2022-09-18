@@ -41,7 +41,7 @@
     }
   </style>
 
-  <body class="animate__fadeIn animate__animated bg-black  ">
+  <body class="animate__fadeIn animate__animated bg-black ">
     <header class="d-flex justify-content-end"></header>
     <main class="d-flex flex-column justify-content-between">
       <section class="container-fluid">
@@ -49,23 +49,32 @@
           <!-- -------SECTION IMAGE AUTHOR AND QUOTE -->
           <div class="col-md-3 d-flex">
             <div class="mt-3">
-              <small class="text-shadow selectable rounded">Image by</small>
-              <h5 class="text-shadow ms-5 selectable rounded" id="author"></h5>
-              <div class="flex-column d-flex w-25">
+              <small class="text-shadow  rounded no-select">Image by</small>
+              <h5 class="text-shadow ms-5  no-select" id="author"></h5>
+             <small class="text-light text-shadow">More Options</small> <i class="text-light mdi mdi-arrow-down"></i>
+              <div class=" d-flex w-25 on-hover">
                 <i
-                  class="mdi mdi-more selectable rounded text-light fs-4 text-shadow"
+                  class="mdi mdi-format-quote-open selectable rounded ms-5 text-light fs-1 text-shadow"
                   onclick="app.quotesController.getQuote()"
                   data-bs-toggle="tooltip"
-                  data-bs-placement="right"
+                  data-bs-placement="bottom"
                   data-bs-title="Change Quote"
                 >
                 </i>
                 <i
-                  class="mdi mdi-more selectable rounded text-light fs-4 text-shadow"
+                  class="mdi mdi-panorama-variant selectable rounded text-light mx-5 fs-1 text-shadow"
                   onclick="app.imagesController.getImages()"
                   data-bs-toggle="tooltip"
-                  data-bs-placement="right"
+                  data-bs-placement="bottom"
                   data-bs-title="Change Image"
+                >
+                </i>
+                <i
+                  class="mdi mdi-update selectable rounded text-light fs-1 text-shadow"
+                  onclick="app.clocksController.toggleTime()"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="bottom"
+                  data-bs-title="Switch Style of Time"
                 >
                 </i>
               </div>
@@ -73,7 +82,7 @@
           </div>
           <!-- -------!SECTION  -->
           <!-- SECTION WEATHER DETAILS -->
-          <div class="col-md-3 position-relative  d-flex flex-column align-items-end">
+          <div class="col-md-3 position-relative  d-flex flex-column align-items-center align-content-md-end">
             <div
               class="mt-2 rounded opacity-low text-shadow elevation-5"
               id="weatherDOM"
@@ -103,13 +112,12 @@
           <div class="col-12 d-flex justify-content-center">
             <div class="p-5 rounded selectable">
               <span class="">
-                <h1 class="text-shadow display-3" id="clockDOM">
+                <h1 class="text-shadow display-3" id="clockDOM" ">
                   ${this.Time}
                 </h1>
-                <h1 class="text-shadow display-3" id="clockmilitaryDOM">
-                  ${this.Time}
-                </h1>
+                
               </span>
+            
             </div>
           </div>
           <!-- ----!SECTION -->
@@ -124,9 +132,9 @@
           </div>
           <!-- ---------!SECTION------------ -->
           <!-- -------------SECTION TODO LIST------------ -->
-          <div class="col-md-4 d-flex justify-content-end">
+          <div class="col-md-4 d-flex justify-content-end mt-5 mt-md-0">
             <div
-              class="card position-absolute bottom-0 end-0 opacity-low text-light elevation-3 mx-4 my-2"
+              class="card position-absolute todocard  bottom-0  end-0 opacity-low text-light elevation-3 mx-4 my-2"
               style="width: 18rem"
             >
               <div class="card-body">

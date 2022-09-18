@@ -1,60 +1,49 @@
 /* BASIC STYLES HERE */
 
-
 @import url('https://fonts.googleapis.com/css2?family=Asap:ital,wght@1,500&family=Audiowide&family=Fascinate+Inline&family=Mouse+Memoirs&family=Orbitron:wght@500&family=Poppins:wght@200&family=Roboto:ital,wght@1,300&family=Titan+One&display=swap');
 
-
-
-
-*{
-font-family: 'Roboto', sans-serif;
-
+* {
+  font-family: 'Roboto', sans-serif;
 }
 
-body{
- background-position: center;
-background-size: cover
+body {
+  background-position: center;
+  background-size: cover;
 }
 
-
-.extradetails{
-    position: absolute;
-    top: 100px;
+.extradetails {
+  position: absolute;
+  top: 120px;
 }
 
-
-input[type="checkbox"]{
+input[type='checkbox'] {
   accent-color: rgb(169, 8, 233);
   width: 1rem;
   height: 1rem;
-  margin-top: .35rem;
+  margin-top: 0.35rem;
 }
 
-
-.scrolldown{
-  max-height:45vh ;
+.scrolldown {
+  max-height: 45vh;
   overflow-y: auto;
 }
 
-.opacity-low{
-background-color: rgba(11, 5, 15, 0.623);
+.opacity-low {
+  background-color: rgba(11, 5, 15, 0.623);
 }
 
-
-
-.text-shadow{
+.text-shadow {
   color: aliceblue;
   text-shadow: 1px 1px black, 0px 0px 5px rgb(30, 6, 61);
   font-weight: bold;
-  letter-spacing: 0.08rem
-  
+  letter-spacing: 0.08rem;
+
   /* Second Color  in text-shadow is the blur */
 }
 
-::placeholder { 
+::placeholder {
+  font-family: 'Roboto', sans-serif;
 
-    font-family: 'Roboto', sans-serif;
- 
   color: rgb(255, 255, 255);
   opacity: 1; /* Firefox */
 }
@@ -64,11 +53,12 @@ background-color: rgba(11, 5, 15, 0.623);
 }
 
 @media screen AND (max-width: 500px) {
+  .extradetails {
+    position: static;
+    top: 0px;
+  }
+  .todocard{
+    left: 27px;
+  }
 
-
-.extradetails{
-  position:static;
-  top: 0px;
-
-}
 }

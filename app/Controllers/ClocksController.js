@@ -4,17 +4,29 @@ import { Pop } from '../Utils/Pop.js';
 import { setHTML, setText } from '../Utils/Writer.js';
 
 function _drawClock() {
+
   let time = clocksService.getTime();
+
   let militaryTime = clocksService.getmilitary()
-  setText('clockDOM', time);
-  setText('clockmilitaryDOM',militaryTime);
+  if (appState.clock.localTime) {
+    
+    setText('clockDOM', time);
+  }else{
+
+    setText('clockDOM',militaryTime);
+  }
+}
+
+
+function _testDrawClock(){
+  setHTML('testclock', appState.clock.ClockTemplate)
 }
 
 export class ClocksController {
   constructor() {
     _drawClock();
     setInterval(_drawClock, 1000);
-    clocksService.getmilitary()
+
   }
 
   getTime() {
@@ -24,6 +36,15 @@ export class ClocksController {
       console.error('[]', error);
       Pop.error(error);
     }
+  }
+
+ async toggleTime(){
+    try {
+     await  clocksService.toggleTime()
+      } catch (error) {
+        console.error('[]',error)
+        Pop.error(error)
+      }
   }
 
 
