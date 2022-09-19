@@ -17,7 +17,7 @@ class StylesService {
       root.style.setProperty('--primary-accent', ' rgb(0, 195, 255)');
       root.style.setProperty(
         '--primary-text-shadow',
-        ' 1px 1px black, 0px 0px 5px rgb(145, 145, 146)'
+        ' 1px 1px black, 0px 0px 5px white'
       );
       root.style.setProperty('--primary-font-color', '#111927');
       root.style.setProperty('text-light', '#111927');

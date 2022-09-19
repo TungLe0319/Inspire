@@ -6,7 +6,7 @@ class QuotesService {
   async getQuote() {
     const res = await SandBox.get('/api/quotes', {
       params: {
-        author: 'Alan Watts'
+        author: `${appState.style.light ? `Alan Watts` : `Sun Tzu`}`,
       },
     });
     // console.log(res.data);
