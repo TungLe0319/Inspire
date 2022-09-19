@@ -51,7 +51,7 @@
             <div class="mt-3">
               <small class="text-shadow  rounded no-select">Image by</small>
               <h5 class="text-shadow ms-5  no-select" id="author"></h5>
-             <small class="text-light text-shadow">More Options</small> <i class="text-light mdi mdi-arrow-down"></i>
+             <small class="text-light text-shadow" id="moreOptions">More Options</small> <i class="text-light mdi mdi-arrow-down"></i>
               <div class=" d-flex w-25 on-hover">
                 <i
                   class="mdi mdi-format-quote-open selectable rounded ms-5 text-light fs-1 text-shadow"
@@ -77,6 +77,18 @@
                   data-bs-title="Switch Style of Time"
                 >
                 </i>
+                <i
+                  class="mdi mdi-theme-light-dark selectable rounded text-light fs-1 ms-5 text-shadow"
+                  onclick="app.stylesController.toggleTheme()"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="bottom"
+                  data-bs-title="Switch Style of Time"
+                >
+                </i>
+                <!-- <div id="stylecolor">
+
+                </div> -->
+                
               </div>
             </div>
           </div>

@@ -1,3 +1,5 @@
+import { appState } from "../AppState.js";
+
 export class Todo {
   constructor(data) {
     this._id = data._id;
@@ -18,14 +20,14 @@ export class Todo {
       this.completed ? 'checked ' : ''
     } onchange="app.todosController.toggleChecked('${this._id}')">
     <div class="mx-5 d-flex align-content-center text-wrap">
-        <p class="mt-2 text-break ${
+        <p class="mt-2 text-break text-dark ${
           this.completed ? 'text-decoration-line-through' : ''
         }">${this.description}</p>
     </div>
     <i
         class="mdi ${
           this.completed ? 'mdi-thumb-up' : ' mdi-trash-can'
-        } fs-4 selectable p-1 rounded"
+        } fs-4 selectable p-1 rounded text-dark"
         onclick="app.todosController.deleteTodo('${this._id}')"
     >
     </i>
@@ -33,5 +35,10 @@ export class Todo {
 
               
     `;
+  }
+
+  get thingy(){
+    let style = appState.style.style
+    return style
   }
 }

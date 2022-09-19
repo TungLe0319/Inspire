@@ -18,9 +18,7 @@ function _drawClock() {
 }
 
 
-function _testDrawClock(){
-  setHTML('testclock', appState.clock.ClockTemplate)
-}
+
 
 export class ClocksController {
   constructor() {

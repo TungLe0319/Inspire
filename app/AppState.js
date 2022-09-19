@@ -1,4 +1,5 @@
 import { Clock } from "./Models/Clock.js"
+import { Style } from "./Models/Style.js"
 import { Value } from "./Models/Value.js"
 import { EventEmitter } from "./Utils/EventEmitter.js"
 import { isValidProp } from "./Utils/isValidProp.js"
@@ -23,14 +24,15 @@ class AppState extends EventEmitter {
   /** @type {import('./Models/Weather').Weather | null} */
   weatherDetails = null
   
-  
+  /** @type {import('./Models/Style').Style} */
+  style = new Style('new')
   
   
   /** @type {import('./Models/Quote').Quote | null} */
   quote= null
   
-  /** @type {import('./Models/Clock').Clock} */
-  clock =  new Clock('tung',true)
+  /** @type {import('./Models/Clock').Clock[]} */
+  clock = [new Clock('tung')]
 }
 
 export const appState = new Proxy(new AppState(), {
