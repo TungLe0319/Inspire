@@ -9,11 +9,11 @@ function _drawClock() {
 
   let militaryTime = clocksService.getmilitary()
   if (appState.clock.localTime) {
-    
+     setHTML('clockDOM24', ``);
     setText('clockDOM', time);
   }else{
-
-    setText('clockDOM',militaryTime);
+    setHTML('clockDOM24', `<i class="mdi mdi-hours-24"></i>`)
+    setText('clockDOM', militaryTime + ' ');
   }
 }
 

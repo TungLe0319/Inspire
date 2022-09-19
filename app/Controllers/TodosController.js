@@ -53,7 +53,9 @@ export class TodosController {
 
   async toggleChecked(id) {
     try {
+
       await todosService.toggleChecked(id);
+     Pop.success('GoodJob!')
     } catch (error) {
       console.error('[toggleCheckedTodo]', error);
       Pop.error(error);

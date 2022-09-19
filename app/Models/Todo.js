@@ -13,9 +13,9 @@ export class Todo {
     
    <li class="border-0 fw-bold  align-items-center list-group-item justify-content-between d-flex ${
      this.completed
-       ? 'bg-transparent text-light '
+       ? 'text--decoration-line opacity-50'
        : ' '
-   }" style="width:20rem;">
+   }" style="width:17rem; height:3rem;">
     <input type="checkbox" name="" class="animate__rubberBand animate__animated selectable" ${
       this.completed ? 'checked ' : ''
     } onchange="app.todosController.toggleChecked('${this._id}')">
@@ -26,7 +26,7 @@ export class Todo {
     </div>
     <i
         class="mdi ${
-          this.completed ? 'mdi-thumb-up' : ' mdi-trash-can'
+          this.completed ? 'mdi-thumb-up ' : ' mdi-trash-can'
         } fs-4 selectable p-1 rounded text-dark"
         onclick="app.todosController.deleteTodo('${this._id}')"
     >
