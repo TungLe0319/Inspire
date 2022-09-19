@@ -16,7 +16,7 @@ this.authorSlug=data.authorSlug
     
 
 
-    <div class="p-4 mx-5 text-shadow  ">
+    <div class="p-4 mx-5 text-shadow no-select ">
            
             <figure class="text-center mb-0">
               <blockquote class="blockquote">

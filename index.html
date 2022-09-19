@@ -51,7 +51,7 @@
             <div class="mt-3">
               <small class="text-shadow  rounded no-select">Image by</small>
               <h5 class="text-shadow ms-5  no-select" id="author"></h5>
-             <small class="text-light text-shadow" id="moreOptions">More Options</small> <i class="text-light mdi mdi-arrow-down"></i>
+             <small class="text-light text-shadow no-select" id="moreOptions">More Options</small> <i class="text-light mdi mdi-arrow-down"></i>
               <div class=" d-flex w-25 on-hover">
                 <i
                   class="mdi mdi-format-quote-open selectable rounded ms-5 text-light fs-1 text-shadow"
@@ -74,7 +74,7 @@
                   onclick="app.clocksController.toggleTime()"
                   data-bs-toggle="tooltip"
                   data-bs-placement="bottom"
-                  data-bs-title="Switch Style of Time"
+                  data-bs-title="Toggle between Military"
                 >
                 </i>
                 <i
@@ -82,7 +82,7 @@
                   onclick="app.stylesController.toggleTheme()"
                   data-bs-toggle="tooltip"
                   data-bs-placement="bottom"
-                  data-bs-title="Switch Style of Time"
+                  data-bs-title="Dark/Light Theme"
                 >
                 </i>
                 <!-- <div id="stylecolor">
@@ -98,7 +98,7 @@
             <div
               class="mt-2 rounded opacity-low text-shadow elevation-5"
               id="weatherDOM"
-              style="max-width: 20rem;"
+              style="max-width: 23rem;"
             ></div>
             <div class="mt-2  extradetails">
               <div
@@ -122,7 +122,7 @@
         <div class="row">
           <!-- SECTION CLOCK -->
           <div class="col-12 d-flex justify-content-center">
-            <div class="p-5 rounded selectable">
+            <div class="p-5 rounded no-select">
               <span class="">
                 <h1 class="text-shadow display-3" id="clockDOM" ">
                   ${this.Time}
@@ -151,7 +151,7 @@
             >
               <div class="card-body">
                 <div
-                  class=" d-flex justify-content-between text-shadow"
+                  class=" d-flex justify-content-between text-shadow no-select"
                 >
                   <img src="./assets/myImages/to-do-list.png" alt="" style="width: 3rem;" class="mb-2">
                   <span class="p-1" id="todo-count"> </span>
