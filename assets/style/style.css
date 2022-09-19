@@ -2,31 +2,28 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Asap:ital,wght@1,500&family=Audiowide&family=Fascinate+Inline&family=Mouse+Memoirs&family=Orbitron:wght@500&family=Poppins:wght@200&family=Roboto:ital,wght@1,300&family=Titan+One&display=swap');
 
-:root{
---primary-bg : rgba(11, 5, 15, 0.623);
---primary-font : 'Roboto', sans-serif;
---primary-accent :  rgb(169, 8, 233);
---primary-font-color : aliceblue;
---primary-text-shadow : 1px 1px black, 0px 0px 2px rgb(11, 11, 39);
---secondary-bg: rgba(225, 218, 230, 0.623);
---secondary-font : 'audiowide', sans-serif;
---secondary-accent :  rgb(0, 195, 255);
---secondary-font-color : rgb(0, 0, 0);
---secondary-text-shadow : 1px 1px rgb(255, 255, 255), 0px 0px 5px rgb(255, 255, 255);
- 
+:root {
+  --primary-bg: rgba(11, 5, 15, 0.623);
+  --primary-font: 'Roboto', sans-serif;
+  --primary-accent: rgb(169, 8, 233);
+  --primary-font-color: aliceblue;
+  --primary-text-shadow: 1px 1px black, 0px 0px 2px rgb(11, 11, 39);
+  --secondary-bg: rgba(225, 218, 230, 0.623);
+  --secondary-font: 'audiowide', sans-serif;
+  --secondary-accent: rgb(0, 195, 255);
+  --secondary-font-color: rgb(0, 0, 0);
+  --secondary-text-shadow: 1px 1px rgb(255, 255, 255),
+    0px 0px 5px rgb(255, 255, 255);
 }
 
 /* 1px 1px black, 0px 0px 2px rgb(11, 11, 39); */
-.text-light{
-  color: var(--primary-font-color)!important;
+.text-light {
+  color: var(--primary-font-color) !important;
 }
 
-
 * {
-  font-family:var(--primary-font);
-  color:var(--primary-font-color);
-
- 
+  font-family: var(--primary-font);
+  color: var(--primary-font-color);
 }
 
 body {
@@ -40,8 +37,13 @@ body {
 }
 
 input[type='checkbox'] {
-  accent-color: var(--primary-accent)
+  accent-color: var(--primary-accent);
+}
 
+.todocard {
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
 
 .scrolldown {
@@ -78,8 +80,9 @@ input[type='checkbox'] {
     position: static;
     top: 0px;
   }
-  .todocard{
-    left: 27px;
+  .todocard {
+    bottom: auto;
+    right: auto;
+    position: static;
   }
-
 }
